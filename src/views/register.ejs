@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/register.css">
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="main">
+  
+        <h1>Register</h1>
+        
+        
+        <% if (typeof errorMessage !== 'undefined' && errorMessage) { %>
+          <div class="alert" role="alert">
+            <%= errorMessage %>
+            <br><br>
+          </div>
+        <% } %>
+        
+        
+          <form action="/register" method="POST">
+            <input type="text" id="name" name="name" placeholder="Type your name.." required><br><br>
+            <input type="email" id="email" name="email" placeholder="Type your email.." required><br><br>
+            <input type="password" id="password" name="password" placeholder="Type your password" required><br><br>
+            <button type="submit" id="input-submit">Register</button>
+          </form>
+          <p>Already have an account? <a href="/login">Login here</a></p>
+  </div>  
+  
+  
+  
+</body>
+</html>

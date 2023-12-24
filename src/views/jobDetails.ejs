@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/Navbar.css">
+<link rel="stylesheet" href="/css/jobDetails.css">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Rubik&display=swap" rel="stylesheet">
+
+
+  <title>Document</title>
+</head>
+<body>
+
+
+
+  <div class="topnav" id="">
+                <a class="easily" style="color: white;" href="/">easily</a>
+                <a class="" href="/">Home</a>
+                <a class="" href="/jobs">Jobs</a>
+                <a class="" href="/register">register</a>
+
+                    
+                        <a class="nav-link active" aria-current="page" href="/login">Login</a>
+
+
+                    <% if (typeof isLoggedIn !== 'undefined' && isLoggedIn) { %>
+                          <a class="nav-link active" aria-current="page" href="/jobCreate">Create Job</a>
+                    <% } %>
+    </div>
+
+    <div class="main-container">
+
+        <div class="container">
+          <img style="width: 100%; border-radius: 8px;" src="/images/web-banner-28759.png" alt="">
+    
+            <% if (job) { %>
+              <div style="width: 100%; height: 80px; display: flex; justify-content: center; font-size: larger;">
+                <h1><span style="color: red;"><%= job.jobDesignation %></span> oppertunity in <%= job.jobLocation %> at <span style="color: green;"><%= job.companyName %></span></h1>
+              </div>
+              
+              <div style="width: 92%; height: 3px; background-color: green; border-radius: 12px; margin-left: 42px;"></div>
+
+              <div class="outer">
+                <div class="inner">
+                  <p style="font-size: 25px;"><b>Location: </b><span style="color: rgb(39, 39, 206);"><%= job.jobLocation %></span></p>
+                  <p style="font-size: 25px;"><b>Salary: </b><span style="color: rgb(39, 39, 206);"><%= job.salary %></span></p>
+                  <p style="font-size: 25px;"><b>Number of openings: </b><span style="color: rgb(39, 39, 206);"><%= job.numberOfOpenings %></span></p>
+                  <p style="font-size: 25px;"><b>Skills Required: </b></p>
+
+                  <div class="skill-container" style="margin-top: -10px; margin-left: 10px;">
+                      <% if (Array.isArray(job.skillsRequired) && job.skillsRequired.length > 0) { %>
+                          <% job.skillsRequired.forEach(skill => { %>
+                            <div class="skill"><%= skill %></div>
+                          <% }); %>
+                      <% } else { %>
+                        <p>No specific skills required for this job</p>
+                      <% } %>
+                  </div>
+
+                  <div class="buttons" style="margin-bottom: 20px;">
+                    <button class="btn">Apply Now</button>
+    
+                    <a href="/jobs">
+                      <button class="btn">Back to Jobs</button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+
+          
+              <!-- Add more job details as needed -->
+
+              
+            <% } else { %>
+              <p>Job not found</p>
+            <% } %>
+          
+        </div>
+    </div>
+</body>
+</html>

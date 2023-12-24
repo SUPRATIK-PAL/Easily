@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create a New Job</title>
+    <link rel="stylesheet" href="/css/createJob.css">
+    <!-- Add any necessary stylesheets or scripts here -->
+</head>
+<body>
+
+    <div class="main">
+
+        <h1>Create a New Job</h1>
+        <form action="/jobCreate" method="POST">
+            <div class="wrapper">
+                <div class="left">
+                
+            
+                    <input type="text" id="companyName" name="companyName" placeholder="Type company name.." required><br><br>
+            
+                    <input type="text" id="jobDesignation" name="jobDesignation" placeholder="Type Job Designation.." required><br><br>
+            
+                    
+                    <input type="text" id="jobLocation" name="jobLocation" placeholder="Type Location.." required><br><br>
+                </div>
+        
+        
+                <div class="right">
+     
+            
+              
+                    <input type="text" id="salary" name="salary" placeholder="Type Salary.." required><br><br>
+            
+                    <input type="text" id="skillsRequired" name="skillsRequired" placeholder="Skills Required (Comma-separated).." required><br><br>
+            
+                    <input style="width: 100%;" type="number" id="numberOfOpenings" name="numberOfOpenings" placeholder="Number of openings.." required><br><br>
+                </div>
+                
+            </div>
+    
+            <input type="submit" value="Create Job" id="input-submit">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/css/jobList.css">
+  <link rel="stylesheet" href="/css/Navbar.css">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Rubik&display=swap" rel="stylesheet">
+
+  <title>Document</title>
+</head>
+<body>
+
+  <!-- Assuming 'jobs' is an array of job objects passed to the template -->
+  <div class="topnav" id="">
+    <a class="easily" style="color: white;" href="/">easily</a>
+    <a class="" href="/">Home</a>
+    <a class="" href="/jobs">Jobs</a>
+    <a class="" href="/register">register</a>
+
+        
+            <a class="nav-link active" aria-current="page" href="/login">Login</a>
+
+
+        <% if (typeof isLoggedIn !== 'undefined' && isLoggedIn) { %>
+              <a class="nav-link active" aria-current="page" href="/jobCreate">Create Job</a>
+        <% } %>
+  </div>
+
+  <div class="heading">
+    <h1>Job Listings</h1>
+
+  </div>
+    
+    <div class="main-container">
+
+      <% jobs.forEach(job => { %>
+          <div class="container">
+              <h2 style="color: rgb(231, 59, 88);"><%= job.companyName %></h2>
+              <p><b>Location : </b> <%= job.jobLocation %></p>
+              <p><%= job.jobDesignation %></p>
+              <p><%= job.salary %></p>
+              <% if (Array.isArray(job.skillsRequired) && job.skillsRequired.length > 0) { %>
+                <h3>Skills Required:</h3>
+                <div class="skill-container">
+                  
+                    <% job.skillsRequired.forEach(skill => { %>
+                      <div class="skill"><%= skill %></div>
+                    <% }); %>
+                  
+                </div>
+              <% } else { %>
+                <p>No specific skills required for this job</p>
+              <% } %>
+          
+              <a href="/jobs/<%= job.id %>">
+                <button>View Details</button>
+              </a>
+          </div>
+          <% }); %>
+    </div>
+
+</body>
+</html>

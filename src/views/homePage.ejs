@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/homepage.css">
+    <link rel="stylesheet" href="/css/Navbar.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Rubik&display=swap" rel="stylesheet">
+    <title>Products</title>
+</head>
+
+<body>
+            <div class="topnav" id="">
+                <a class="easily" style="color: white;" href="/">easily</a>
+                <a class="" href="/">Home</a>
+                <a class="" href="/jobs">Jobs</a>
+                <a class="" href="/register">register</a>
+
+                    
+                        <a class="nav-link active" aria-current="page" href="/login">Login</a>
+
+
+                    <% if (typeof isLoggedIn !== 'undefined' && isLoggedIn) { %>
+                          <a class="nav-link active" aria-current="page" href="/jobCreate">Create Job</a>
+                    <% } %>
+            </div>
+        <!--Placeholder for rendering other ejs views. -->
+        <div class="container">
+            <div class="left">
+                <h1>A comprehensive platform for reliable</h1>
+                <h2>Job opportunities and Internships</h2>
+                <h3>Get Discovered. Get Hired.</h3>
+
+                <div class="btn-div">
+                    <a href="/jobs">
+                        <button>I'm a Job Seeker</button>
+                    </a>
+                    <a href="/login">
+                        <button>I'm a Recruiter</button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="right">
+                <img class="image" src="/images/banner_project.png" alt="banner_project">
+            </div>
+        </div>
+</body>
+
+</html>
