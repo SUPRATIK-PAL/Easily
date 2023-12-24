@@ -1,8 +1,8 @@
 import express from "express";
 import path from "path";
-import jobController from "./src/controllers/jobController.js";
-import UserController from "./src/controllers/userController.js";
-import { checkLogin } from "./src/controllers/userController.js";
+import jobController from "./controllers/jobController.js";
+import UserController from "./controllers/userController.js";
+import { checkLogin } from "./controllers/userController.js";
 
 const app = express();
 app.use(express.static('public'));
